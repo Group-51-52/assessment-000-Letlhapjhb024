@@ -1,13 +1,17 @@
 
 #Question 1
-get_date_of_birth(id_number:str): 
+def get_date_of_birth(id_number:str) -> str:
+
     """
     STEP 2: Extract the date of birth from the ID number and return it as a string
 
     return format: DD/MM/YY: 
-    """
-    birth_of_date = id_number[4:6] 
-    return 
+
+        """
+    year = id_number[:2]
+    month = id_number[2:4]
+    day = id_number[4:6] 
+    return f"{day}/{month}/{year}"
 
 
 #Question 2    
@@ -19,15 +23,16 @@ def get_gender(id_number):
     Formula: 1 if the ID number's 7th to 10th digit is less than 5000, the person is
     female and if it is greater than 4999, the person is male.
     """
-    
-    if int(id_number[6]) > 4:
-    'Male'
+    gender_digits = int(id_number[6:10])
+
+    if gender_digits  < 5000:
+        'female'
     else:
-    'Female'
+        'Male'
 
     
 #Question 3
-def get_citizenship(id_number):
+def get_citizenship(id_number: str) -> str:
     """
     STEP 4: Extract the citizenship from the ID number using the formula below and 
     return it as a string
@@ -37,9 +42,10 @@ def get_citizenship(id_number):
     African citizen.
     """
 if int(id_number[10]) == 0:
-'South African'
+    'South African'
 else:
-'Non-South African'
+    'Non-South African'
+
 
 
 #Question 4
@@ -54,7 +60,16 @@ else:
     """
     
 
-            
+def fizzbuzz(n):
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i) 
 
 #Question 5
 def check_number(n:int):
@@ -81,3 +96,20 @@ def check_number(n:int):
     If n is non-positive and odd then return 'Extremely Weird'
     """
 
+def check_number(n :int)-> str:
+    if n == 0:
+        return 'Neutral'
+    elif n < 0:
+        if n % 2 == 0:
+            return 'Very Weird'
+        else:
+            return 'Extremely Weird'
+    else:
+        if n % 2 != 0:
+            return 'Weird'
+        elif 2 <= n <= 5:
+            return 'Not Weird'
+        elif 6 <= n <= 20:
+            return 'Weird'
+        elif n > 20:
+            return 'Not Weird'

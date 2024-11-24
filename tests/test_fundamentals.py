@@ -15,6 +15,7 @@ class TestFunctions(TestCase):
         self.assertEqual(fun.get_gender('9106236034082'), 'Male')
         self.assertEqual(fun.get_gender('9402030894089'), 'Female')
         self.assertEqual(fun.get_gender('0312264983083'), 'Female')
+        self.assertEqual(fun.get_gender('0002175051080'), ('Male'))
 
     def test_get_citizenship(self):
         self.assertEqual(fun.get_citizenship('9407076583088'), 'South African')
